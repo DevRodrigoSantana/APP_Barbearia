@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "113405612613",
+    "project_id": "agenda-facil-barbearia",
+    "storage_bucket": "agenda-facil-barbearia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113405612613:android:2a859b7710e61b3923092c",
+        "android_client_info": {
+          "package_name": "com.santos.barbeariafacil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRxX9b4J3whrM69nMZf5wKPzhH4RPw6qE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

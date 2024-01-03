@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Barbearia Facil</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="naoTemConta">Não tem conta? Cadastre-se</string>
+    <string name="nomeCompleto">Nome Completo</string>
+    <string name="confirmarSenha">Confirmar Senha</string>
+    <string name="telefone">Celular</string>
+    <string name="cadastrar">Cadastrar</string>
+
+</resources>
