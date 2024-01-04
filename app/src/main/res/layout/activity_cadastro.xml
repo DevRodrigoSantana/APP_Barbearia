@@ -19,6 +19,7 @@
         android:layout_below="@id/viewTop">
 
         <RelativeLayout
+            android:id="@+id/textinput_celular"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -38,6 +39,7 @@
                 android:layout_marginEnd="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/baseline_person_24"
@@ -53,10 +55,10 @@
                 android:layout_below="@id/textInputLayout1"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                >
+                android:layout_marginEnd="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/baseline_email_24"
@@ -77,6 +79,7 @@
                 app:passwordToggleTint="@color/accents">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_senha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/baseline_key_24"
@@ -97,6 +100,7 @@
                 app:passwordToggleTint="@color/accents">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_confirma_senha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/baseline_key_24"
@@ -115,6 +119,7 @@
                 android:layout_marginEnd="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_celular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/baseline_phone_android_24"
@@ -124,26 +129,28 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/buttonCadastro"
+                android:id="@+id/bt_cadastrar"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
                 android:layout_below="@id/textInputLayout5"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
+                android:onClick="validarCadastroUsuario"
                 android:text="@string/cadastrar" />
+
             <View
                 android:id="@+id/viewbottom"
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
+                android:layout_below="@+id/bt_cadastrar"
                 android:layout_marginTop="90dp"
                 android:background="@drawable/login_background_view_bottom"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_below="@+id/buttonCadastro"
-                app:layout_constraintVertical_bias="1.0"/>
+                app:layout_constraintVertical_bias="1.0" />
 
 
         </RelativeLayout>
