@@ -21,20 +21,22 @@
         <RelativeLayout
             android:id="@+id/textinput_celular"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageCadastro"
                 android:layout_width="252dp"
                 android:layout_height="271dp"
                 android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/cadastro" />
+                android:contentDescription="@string/descricaoImgCadastro"
+                app:srcCompat="@drawable/cadastro"
+                tools:ignore="ImageContrastCheck" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout1"
                 android:layout_width="409dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imageView"
+                android:layout_below="@id/imageCadastro"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp">
 
@@ -45,7 +47,9 @@
                     android:drawableStart="@drawable/baseline_person_24"
                     android:drawablePadding="10dp"
                     android:hint="@string/nomeCompleto"
-                    android:inputType="text|textAutoComplete" />
+                    android:inputType="text|textAutoComplete"
+                    android:textColorHint="#546E7A"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +68,8 @@
                     android:drawableStart="@drawable/baseline_email_24"
                     android:drawablePadding="10dp"
                     android:hint="@string/email"
-                    android:inputType="text|textWebEmailAddress|textAutoComplete" />
+                    android:inputType="text|textWebEmailAddress|textAutoComplete"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +90,8 @@
                     android:drawableStart="@drawable/baseline_key_24"
                     android:drawablePadding="10dp"
                     android:hint="@string/senha"
-                    android:inputType="text|textPassword" />
+                    android:inputType="text|textPassword"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +112,8 @@
                     android:drawableStart="@drawable/baseline_key_24"
                     android:drawablePadding="10dp"
                     android:hint="@string/confirmarSenha"
-                    android:inputType="text|textPassword" />
+                    android:inputType="text|textPassword"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -125,7 +132,8 @@
                     android:drawableStart="@drawable/baseline_phone_android_24"
                     android:drawablePadding="10dp"
                     android:hint="@string/telefone"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -137,7 +145,8 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:onClick="validarCadastroUsuario"
-                android:text="@string/cadastrar" />
+                android:text="@string/cadastrar"
+                tools:ignore="UsingOnClickInXml,TextContrastCheck" />
 
             <View
                 android:id="@+id/viewbottom"

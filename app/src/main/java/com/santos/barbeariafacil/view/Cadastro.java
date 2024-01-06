@@ -12,8 +12,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.santos.barbeariafacil.R;
 import com.santos.barbeariafacil.config.ConfigFirebase;
+import com.santos.barbeariafacil.model.Usuario;
 
 public class Cadastro extends AppCompatActivity {
 
@@ -32,14 +36,35 @@ public class Cadastro extends AppCompatActivity {
         campoTelefone = findViewById(R.id.edit_celular);
 
     }
-    public void cadastroUsuario(){
+    public void cadastroUsuario(Usuario user){
         autenticacao = ConfigFirebase.getFirebaseAutenticaca();
-        autenticacao.createUserWithEmailAndPassword("",""
+        autenticacao.createUserWithEmailAndPassword(user.getEmail(),user.getSenha()
 
         ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(Cadastro.this,
+                            "Sucesso ao cadastrar usuario!",
+                            Toast.LENGTH_SHORT).show();
 
+
+                } else {
+                    String excepcao = "";
+                    try {
+                        throw task.getException();
+                    } catch (FirebaseAuthWeakPasswordException e) {//excepção para senha de autenticação fraca
+                        excepcao = "Digite uma senha mais forte!";
+                    } catch (FirebaseAuthInvalidCredentialsException e) {//excepção para e-mail invalido
+                        excepcao = "Por favor, digite um e-mail válido";
+                    } catch (FirebaseAuthUserCollisionException e) {//excepção para conta ja cadastrada
+                        excepcao = "está conta já foi cadastrada!";
+                    } catch (Exception e) {
+                        excepcao = "Erro ao cadastrar usuário:" + e.getMessage();//excepção  para erro ainda não esclarecido
+                        e.printStackTrace();
+                    }
+
+                }
             }
         });
     }
@@ -57,11 +82,20 @@ public class Cadastro extends AppCompatActivity {
                 if (!textSenha.isEmpty()){
                     if(!textConfirmaSenha.isEmpty()){
                         if(!textTelefone.isEmpty()){
-                            if(textSenha  != textConfirmaSenha){
+                            if(textSenha.equals(textConfirmaSenha)){
+
+                                Usuario usuario = new Usuario();
+                                usuario.setNomeCompleto(textNome);
+                                usuario.setEmail(textEmail);
+                                usuario.setSenha(textSenha);
+                                usuario.setConfirmarSenha(textConfirmaSenha);
+                                usuario.setTelefone(textTelefone);
+
+                                cadastroUsuario(usuario);
 
                             }else {
                                 Toast.makeText(Cadastro.this,
-                                        "Preencha senhas são diferentes corretamente!",
+                                        "Preencha corretamente as senhas!",
                                         Toast.LENGTH_SHORT).show();
                             }
 
