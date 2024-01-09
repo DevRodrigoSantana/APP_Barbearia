@@ -11,33 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarbeariaFacil"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:configChanges="orientation|screenSize">
         <activity
             android:name=".view.Principal"
+            android:configChanges="orientation|screenSize"
             android:exported="false"
-            android:label="@string/title_activity_principal"
-            android:theme="@style/Theme.BarbeariaFacil" />
-        <activity
-            android:name=".view.MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.BarbeariaFacil" />
-        <activity
-            android:name=".view.Inicial"
-            android:exported="false"
-            android:label="@string/title_activity_inicial"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.BarbeariaFacil" />
         <activity
             android:name=".view.Cadastro"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".view.Login"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize"/>
         <activity
             android:name=".view.Splash"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
