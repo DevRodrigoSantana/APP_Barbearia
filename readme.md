@@ -3,7 +3,7 @@
 Bem-vindo ao Corte Agendado, o aplicativo que simplifica o agendamento de cortes na sua barbearia favorita! Aqui está uma visão geral das telas principais do aplicativo:
 
 ## Splash Activity
-Ao iniciar o Corte Agendado, somos recebidos com uma tela de introdução elegante e atraente, apresentando o logotipo da nossa barbearia. Essa breve tela de boas-vindas cria uma transição suave para a experiência do usuário.
+Ao iniciar o Corte Agendado, somos recebidos com uma tela de introdução elegante e atraente, apresentando o logotipo da do aplicativo. Essa breve tela de boas-vindas cria uma transição suave para a experiência do usuário.
 
 <img width="206" alt="Captura de tela 2024-01-05 222526" src="https://github.com/DevRodrigoSantana/APP_Barbearia/assets/127454248/5a5ed027-bdc4-4d13-aed1-b8d5c12f164b">
 
