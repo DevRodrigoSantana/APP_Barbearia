@@ -54,5 +54,6 @@
     </string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_principal">Principal</string>
+    <string name="descricaologin">Imagem de Login com uma barba e bigode azul  e a palavra login em vermelho</string>
 
 </resources>

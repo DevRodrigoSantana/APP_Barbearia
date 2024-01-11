@@ -14,12 +14,12 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="116dp"
+        android:contentDescription="@string/descricaologin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewTop"
-        app:srcCompat="@drawable/login"
 
-        />
+        app:layout_constraintTop_toBottomOf="@+id/viewTop"
+        app:srcCompat="@drawable/login" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -31,11 +31,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageLogo">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="10dp"
-            android:hint="@string/email" />
+            android:hint="@string/email"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -52,25 +55,30 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/baseline_key_24"
             android:drawablePadding="10dp"
             android:hint="@string/senha"
-            android:inputType="text|textPassword" />
+            android:inputType="text|textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="291dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/entrar"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textNaoTemConta"
@@ -80,9 +88,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="117dp"
         android:text="@string/naoTemConta"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
 
 
     <View

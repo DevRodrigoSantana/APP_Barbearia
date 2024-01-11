@@ -47,6 +47,7 @@ public class Cadastro extends AppCompatActivity {
                     Toast.makeText(Cadastro.this,
                             "Sucesso ao cadastrar usuario!",
                             Toast.LENGTH_SHORT).show();
+                    finish();
 
 
                 } else {

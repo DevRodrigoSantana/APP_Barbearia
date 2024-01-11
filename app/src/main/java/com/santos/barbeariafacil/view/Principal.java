@@ -1,23 +1,42 @@
 package com.santos.barbeariafacil.view;
 
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.santos.barbeariafacil.R;
+import com.santos.barbeariafacil.config.ConfigFirebase;
+import com.santos.barbeariafacil.controller.TemporizadorUserLogin;
 
 public class Principal extends AppCompatActivity {
 
     private FloatingActionButton fabAdd, fabAgenda, fabCorte;
     private Animation rotateOpenAnimation, rotateCloseAnimation, fromBottomAnimation, toBottomAnimation;
     private boolean isMenuOpen = false;
+    private TemporizadorUserLogin temporizadorUserLogin;
+
+    private FirebaseAuth autenticacao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+        temporizadorUserLogin = new TemporizadorUserLogin(new Runnable() {
+            @Override
+            public void run() {
+                autenticacao = ConfigFirebase.getFirebaseAutenticaca();
+                autenticacao.signOut();
+                finish();
+
+
+            }
+        });
 
         fabAdd = findViewById(R.id.fab_add);
         fabAgenda = findViewById(R.id.fab_agenda);
@@ -31,7 +50,9 @@ public class Principal extends AppCompatActivity {
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 toggleMenu();
+                temporizadorUserLogin.reiniciarContagemRegressiva(); // Reiniciar o temporizador ao interagir com a tela
             }
         });
 
@@ -49,6 +70,19 @@ public class Principal extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        temporizadorUserLogin.iniciarContagemRegressiva(); // Iniciar o temporizador ao retomar a Activity
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        temporizadorUserLogin.pararContagemRegressiva(); // Parar o temporizador ao pausar a Activity
+    }
+
 
     private void toggleMenu() {
         if (isMenuOpen) {
@@ -76,6 +110,7 @@ public class Principal extends AppCompatActivity {
         fabAgenda.setVisibility(View.INVISIBLE);
         fabCorte.setVisibility(View.INVISIBLE);
     }
+
 
 
 
