@@ -55,5 +55,11 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_principal">Principal</string>
     <string name="descricaologin">Imagem de Login com uma barba e bigode azul  e a palavra login em vermelho</string>
+    <string name="EscolhaBarbeiroCliente">Você é:</string>
+    <string name="ola">Olá, seja bem-vindo!</string>
+    <string name="botaoBarbeiro">Barbeiro\n</string>
+    <string name="botaoCliente">Cliente\n</string>
+    <string name="textoantes">Primeiro nos diga você é:</string>
+    <string name="Login">Login</string>
 
 </resources>

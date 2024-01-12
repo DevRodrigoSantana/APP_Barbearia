@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".view.CadastroCliente">
+
+    <View
+        android:id="@+id/viewTop"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/login_background_view_top" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/viewTop">
+
+        <RelativeLayout
+            android:id="@+id/textinput_celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/imageCadastro"
+                android:layout_width="252dp"
+                android:layout_height="271dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/descricaoImgCadastro"
+                app:srcCompat="@drawable/cadastro"
+                tools:ignore="ImageContrastCheck" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout1"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageCadastro"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/baseline_person_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/nomeCompleto"
+                    android:inputType="text|textAutoComplete"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_primary"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout1"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/baseline_email_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/email"
+                    android:inputType="text|textWebEmailAddress|textAutoComplete"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/accents">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/baseline_key_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/senha"
+                    android:inputType="text|textPassword"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout3"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/accents">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_confirma_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/baseline_key_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/confirmarSenha"
+                    android:inputType="text|textPassword"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                android:layout_width="409dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInputLayout4"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_celular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/baseline_phone_android_24"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/telefone"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/bt_cadastrar"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_below="@id/textInputLayout5"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="validarCadastroUsuario"
+                android:text="@string/cadastrar"
+                android:textColor="@color/white"
+                tools:ignore="UsingOnClickInXml,TextContrastCheck" />
+
+            <View
+                android:id="@+id/viewbottom"
+                android:layout_width="wrap_content"
+                android:layout_height="66dp"
+                android:layout_below="@+id/bt_cadastrar"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/login_background_view_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

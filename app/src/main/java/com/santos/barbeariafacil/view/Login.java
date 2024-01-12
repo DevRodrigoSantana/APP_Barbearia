@@ -21,8 +21,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.santos.barbeariafacil.R;
 import com.santos.barbeariafacil.config.ConfigFirebase;
 import com.santos.barbeariafacil.model.Usuario;
@@ -88,7 +86,7 @@ public class Login extends AppCompatActivity {
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                openCadastro();
+                openEscolha();
 
 
             }
@@ -121,7 +119,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void openCadastro(){
-        Intent intent = new Intent(Login.this,Cadastro.class);
+        Intent intent = new Intent(Login.this, CadastroCliente.class);
         startActivity(intent);
 
     }
@@ -165,5 +163,10 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this,Principal.class);
         startActivity(intent);
         finish();
+    }
+    public void openEscolha(){
+        Intent intent = new Intent(Login.this,BarbeiroCliente.class);
+        startActivity(intent);
+
     }
 }
