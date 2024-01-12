@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Translação para o lado (XDelta) -->
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="100%"
+        android:duration="1000" />
+
+    <!-- Alteração de opacidade -->
+    <alpha
+        android:fromAlpha="1"
+        android:toAlpha="0"
+        android:duration="400" />
+
+</set>
